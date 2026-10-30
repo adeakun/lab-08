@@ -52,12 +52,15 @@ class WizardTest {
         evilWizard.train()
 
         assertEquals(11,evilWizard.spellPower) // Output should be 11
-        assertEquals(25,evilWizard.spellPower) // Output should be 25
+        assertEquals(25,evilWizard.mana) // Output should be 25
     }
 
     @Test
     fun train_insufficientMana_NoOutcome(){
         evilWizard.mana = 3
         evilWizard.train()
+
+        assertEquals(10,evilWizard.spellPower) // Output should be 11
+        assertEquals(3,evilWizard.mana) // Output should be 25
     }
 }
